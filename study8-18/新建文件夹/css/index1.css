@@ -1,0 +1,130 @@
+*{margin:0;padding:0}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+#top{width:1170px;
+     height: 35px;
+     line-height: 35px;
+     background: #f2f2f2;
+     margin: 0 auto;
+     position: relative;
+     overflow: hidden;
+     }
+p{ padding-left: 12px;
+  line-height: 35px;
+  float:left;
+  }
+#top p a:hover{text-decoration: underline;
+               color:#f00;}   
+#top p a{font-size:12px;
+	     color:#3e4149;	
+        } 
+#top #list{
+	width:304px;
+	height: 35px;
+
+	line-height: 35px;
+	padding-left:782px;
+	margin-left: 86px;	
+}   
+#top #list li{float:left;
+              
+             }
+#top #list li a{font-size: 12px;
+               color:#3e4149;	
+	           border-right: 1px solid #916691;
+	           padding:0 12px;}
+#top #list li a:hover{text-decoration: underline;
+                      color:#f00;} 	           
+#top #list #last a{border: none;
+                   padding-right: 0;}
+                   
+#banner{width:1176px;
+     height: 93px;
+     background: #f2f2f2;
+     margin: 0 auto;
+     position: relative;
+     overflow: hidden;
+     }
+#banner .banner1{float:left;}
+#banner .banner2{float:left;
+                 margin-top: 9px;}
+#banner .banner3{width:394px;
+                 height: 37px;
+                 border: 1px solid #6b4185;
+                 float:left;
+                 background: red;
+                 margin-left: 284px;
+                 margin-top: 9px;}  
+#banner .banner3 #box{width:312px;
+                       height:37px;
+                       line-height:32px;
+                       border: none;
+                       float: left;}  
+#banner .banner3 #btn{width:82px;
+                      height: 37px;
+                      line-height: 37px;
+                      background: #6b4185;
+                      font-size: 14px;
+                      color:#fff;
+                      text-align: center;
+                      border: none;
+                      float: left;}	
+#banner #banner4{width: 302px;
+              height: 30px;
+              line-height: 30px;
+              }
+#banner #banner4 li{float:left}
+#banner #banner4 a{font-size: 11px;
+                   color:#3e4149;
+                   padding-right: 8px;
+                   }
+#banner #banner4 a:hover{text-decoration: underline;
+                         color:#f00;}
+#main1{width:1181px;
+       height: 510px;
+       overflow: hidden;
+       position: relative;
+       margin: 0 auto;
+       background: red;}
+#main1 #main11{width:1181px;
+                  height: 30px;
+                  line-height: 30px;
+                  background: #333;}
+#main1 #main11 p{width:207px;
+                  height: 30px;
+                  line-height: 30px;
+                  text-align: center;
+                  font-size: 16px;
+                  color:#fff;
+                  margin-left: 11px;
+                  background: #654579;}
+#main1 #main11 li{height: 30px;
+                  line-height: 30px;
+                  float:left;}
+#main1 #main11 li a{font-size: 16px;
+                   color:#fff;
+                   padding:0 35px}
+#main1 #main11 li a:hover{color:#686161;}
+#main1 #main1left{width: 219px;
+                  height: 480px;
+                  position: absolute;
+                  left:11px;
+                  top:30px;
+                  background: yellow;}
+#main1 #main1right{width: 951px;
+                  height: 480px;
+                  position: absolute;
+                  left:230px;
+                  top:30px;
+                  background: blue;}
+ #main1 #main1right li{width:951px;
+                      height: 480px;
+                      display: none;}   
+
+ #main1 #main1right .dot{width:100px;
+                         height: 30px;
+                         position: absolute;
+                         background: orange;
+                         z-index:3 ;
+                         top:100px}

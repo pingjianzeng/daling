@@ -1,0 +1,43 @@
+﻿[{
+  
+    "data": [
+      {
+        "imgUrl": "images/xingqing/right/main223_1.jpg",
+        "desc": "平肝安神银耳莲子粥(200g)",
+        "price": "￥29.00",
+        "oldprice": "￥58.00",
+  
+      },
+  {
+        "imgUrl": "images/xingqing/right/main223_2.jpg",
+        "desc": "[德国Hacin]小甘菊修护唇膏",
+        "price": "￥23.00",
+        "oldprice": "￥48.00",
+      },
+  {
+        "imgUrl": "images/xingqing/right/main223_3.jpg",
+        "desc": "[德国Hacin]小甘菊修护唇膏",
+        "price": "￥9.00",
+        "oldprice": "￥58.00",
+      },
+  {
+        "imgUrl": "images/xingqing/right/main223_4.jpg",
+        "desc": "[德国Hacin]小甘菊修护唇膏",
+        "price": "￥9.00",
+        "oldprice": "￥58.00",
+      },
+	  {
+        "imgUrl": "images/xingqing/right/main223_5.jpg",
+        "desc": "[德国Hacin]小甘菊修护唇膏",
+        "price": "￥9.00",
+        "oldprice": "￥58.00",
+      },
+  {
+        "imgUrl": "images/xingqing/right/main223_6.jpg",
+        "desc": "[德国Hacin]小甘菊护唇膏",
+        "price": "￥9.00",
+        "oldprice": "￥58.00",
+      }  
+   ]  
+}
+]

@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>当前网页标题</title>
+<link rel="shortcut icon" href="http://img.cdn.daling.com/st/web/160809171739//styles/images/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="css/xiangqing.css">
+ 
+  <script type="text/javascript" src="js/jq.js"></script>
+    <!--<script type="text/javascript" src="js/tool.js">
+  </script>-->
+  <script type="text/javascript">
+    $(function(){
+    	
+	     $("#top #last").mouseover(function(){
+	     	  $("#top .loading").show();
+	     })
+	     $("#top .loading").mouseover(function(){
+	     	$(this).show();
+	     })
+	     
+	     $("#top #last").mouseout(function(){
+	     	 $("#top .loading").hide()
+	     })
+	     $("#top .loading").mouseout(function(){
+	     	$(this).hide();
+	     })
+	        var $total=0;
+//	     $("#main222 .l2").click(function(){
+//	     	  $total++
+//	     	  $("#right .r11 #s2").html($total)
+//	     })
+	     $("#main221 #s4 a").mouseover(function(){
+	     	  $("#main2 #gz").show()
+	     	  $("#main221 #s5").hide()
+	        $("#main221 #s6").show()
+	     })
+	     $("#main2 #gz").mouseover(function(){
+	     	  $(this).show()
+	     	  $("#main221 #s5").hide()
+	        $("#main221 #s6").show()
+	     })
+	     $("#main221 #s4 a").mouseout(function(){
+	     	  $("#main2 #gz").hide()
+	     	  $("#main221 #s5").show()
+	        $("#main221 #s6").hide()
+	     })
+	     $("#main2 #gz").mouseout(function(){
+	     	  $(this).hide()
+	     	  $("#main221 #s5").show()
+	        $("#main221 #s6").hide()
+	     })
+	     
+	     var $sum=1;
+	     $("#main222 .s3").click(function(){
+	     	   $sum++
+	     	   if($sum>2){
+	     	   	$sum=2
+	     	   	alert("每人限购2件！")
+	     	   }
+	     	   $("#main222 .s2").html($sum)
+	     })
+	     $("#main222 .s4").click(function(){
+	     	   $sum--
+	     	   if($sum<1){
+	     	   	$sum=1
+	     	   }
+	     	   $("#main222 .s2").html($sum)
+	     })
+	     
+       $("#main3 #u3").find("li").click(function(){
+     	$(this).css({"border":"1px solid #ccc","border-bottom":"none"}).siblings().css({"border":"none","border-bottom":"1px solid #ccc"})
+     })
+       var $offSet=$("#main3 #u3").offset().top
+          console.log($offSet);
+     if($offSet<100){
+     	  $offSet=100
+       }  
+       
+       var $m=0;
+      $(".r11").click(function(){
+      	     $m++
+             if($m%2==1){
+      	        $("#right").animate({"margin-right":"0"},500)
+             }else{
+             	  $("#right").animate({"margin-right":"-280"},500)
+             }
+      })
+      $("#main3 #u3 li").click(function(){
+       	   $("body,html").animate({scrollTop:1000*$(this).index()},500)
+       })
+     
+     
+       $("#main222 dd .list1 .l2").click(function(ev){
+       	var $oDiv=document.createElement("div")
+       	    $oDiv.className="lei"
+       	    ev=ev||event
+       	  $oDiv.style.left=324+"px"
+ 		      $oDiv.style.top=14+"px"
+       	$("#main222 dd .list1 .l2").append($oDiv)
+      
+         var json={
+         	
+		     	x:$(".r11 #s2").offset().left+5,
+		     	y:$(".r11 #s2").offset().top+150
+		     }
+       
+          console.log(json.x);
+          console.log(json.y)
+   
+       
+       $total++
+       console.log($total);
+     fn($oDiv,{left:json.x-488,top:json.y-609},8,function(){
+       	  	$("#main222 .lei").remove();
+	     	  $("#right .r11 #s2").html($total)
+       	 })
+
+     })
+     $.ajax({
+   			type:"get",
+   			url:"jsonxq1.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+
+   				var $arr=eval(str)
+   				for(var i=0;i<$arr[0].data.length;i++){
+   					var jsonarr=$arr[0].data[i]                                                                          
+   					var $l1=$("<li class='l1'><div class='p0'><img src='"+jsonarr["imgUrl"]+"'/></div><div class='p1'><a href='javascript:;' >"+jsonarr["desc"]+"</a></div><div class='p2'>"+jsonarr["price"]+"</div><div class='p3'>"+jsonarr["oldprice"]+"</div></li>")
+          $(".box").append($l1)
+           }
+   				
+   				var $sum=0;
+   			$("#main223 #bottom  img:first").click(function(){ 
+              $sum++
+   					$("#main223 .box").css({"margin-top":-320*(3-($sum%4))+"px"})
+	          if($sum==3){
+	          	$sum=0;
+	          }
+   			})
+   			$("#main223 #bottom  img:last").click(function(){         	
+   				$sum++;
+   				$("#main223 .box").css({"margin-top":-320*($sum%3)+"px"})
+   			   if($sum==3){
+   			   	$sum=0;
+   			   }	
+   			})
+    }     
+  }) 
+     
+ 
+     
+    })
+    
+    function fn(obj,target,speed,fn){
+			var  a=0.003;				
+			var dis=0;			
+			obj.timer=null;
+			//相对的坐标
+			var coord={
+				x:target.left-obj.offsetLeft,
+				y:target.top-obj.offsetTop,
+			}			
+			//求b系数			
+			//var b= (y-ax2)/x;			
+			var b=(coord.y-a*coord.x*coord.x)/coord.x;		
+			var yuandian={
+				x:obj.offsetLeft,
+				y:obj.offsetTop
+			}				
+			obj.timer=setInterval(function(){				
+				dis+=speed;			
+				obj.style.left=yuandian.x+dis+"px";
+				obj.style.top=yuandian.y+a*dis*dis+b*dis+"px";			
+				if(dis>=coord.x){
+					clearInterval(obj.timer);
+					obj.style.left=target.x+"px";
+					obj.style.top=target.y+"px";
+					fn&&fn();
+				}
+		},30)
+
+  }
+   		
+
+  </script>
+ 
+  </head>
+
+  <body style="height: 2000px">
+
+  	<div id="right">
+  		 <div class="r1">
+  		 	 <div class="r11">
+  		 	 	 <img src="images/xingqing/right/right.png"/>
+  		 	 	 <span id="s1">购物车</span>
+  		 	 	 <span id="s2">0</span>	  
+  		 	 </div>
+  		 	 <ul class="u1">
+  		 	 	<li id="first">
+  	 <!--		<span>我的优惠券</span> -->
+  		 	 		<img src="images/xingqing/right/right_01.jpg"/></li>
+  		 	 	<li id="last"> 
+  		 	<!-- 		<span>我的收藏</span>-->
+  		 	 		<img src="images/xingqing/right/right_03.jpg"/></li>
+  		 	 </ul>
+  		 	 <div id="bottom">
+  		 		 <img src="images/top_04.jpg" />
+  		 		  <img src="images/xingqing/right/right11.png"/>
+  		 		 
+  		   </div>
+  		 </div>
+  	</div>
+   <div id="top">
+   	 <p><a href="javascript:;" >消费者告知书</a></p>
+   	 <ul id="list">
+	   	 	<li><a href="javascript:;" >登录</a></li>
+	   	 	<li><a href="javascript:;" >注册</a></li>
+	   	 	<li><a href="javascript:;" ><img src="images/top_03.jpg" />&nbsp;400-080-1888</a></li>
+	   	 	<li id="last"><a href="javascript:;" >下载达令app</a></li>
+   	 </ul>
+   	 <div class="loading"><img src="images/top_04.jpg" /></div>
+   </div>
+   <div id="banner">
+   	 <div class="banner1">
+   	 	 <img src="images/banner_04.jpg"  />
+   	 </div>
+   	 <div class="banner2">
+   	 	 <img src="images/banner_03.jpg"  />
+   	 </div>
+   	 <div class="banner3">
+   	 	 <input type="text" id="box"/>
+   	 	 <input type="button" id="btn" value="搜索" />
+   	 	 <ul id="banner4">
+   	 	 	<li><a href="javascript:;" >眼霜</a></li>
+   	 	 	<li><a href="javascript:;" >文具</a></li>
+   	 	 	<li><a href="javascript:;" >杯子</a></li>
+   	 	 	<li><a href="javascript:;" >项链</a></li>
+   	 	 	<li><a href="javascript:;" >钱包</a></li>
+   	 	 	<li><a href="javascript:;" >面膜</a></li>
+   	 	 	<li><a href="javascript:;" >香水</a></li>
+   	 	 	<li><a href="javascript:;" >巧克力</a></li>
+   	 	 	<li><a href="javascript:;" >情趣</a></li>   	 	 	
+   	 	 </ul>
+   	 </div>  	 
+   </div>
+   <div id="main1">
+   	 <div id="main11">
+   	 	  <p>全部分类^</p>
+   	 	  <ul id="list">
+   	 	  	<li><a href="javascript:;" >首页</a></li>
+   	 	  	<li><a href="javascript:;" >极致美护</a></li>
+   	 	  	<li><a href="javascript:;" >全球零食</a></li>
+   	 	  	<li><a href="javascript:;" >创意生活</a></li>
+   	 	  	<li><a href="javascript:;" >个性配饰</a></li>
+   	 	  	<li><a href="javascript:;" >包袋手袋</a></li>   	 	  	
+   	 	  </ul>
+   	 </div>
+   </div>	 
+  <div id="main2">
+  	 <div id="main21">
+  	 	  <ul>
+  	 	  	<li><img src="images/xingqing/right/main21_03.jpg"/></li>
+	  	 	  <li><a href="javascript:;">全球零食</a><span>></span></li>
+	  	 	  <li><a href="javascript:;">咖啡/冲饮</a><span>></span></li>
+	  	 	  <li><a href="javascript:;">冲饮粉奶茶</a><span>></span></li>
+	  	 	  <li>[台湾Simply]纯正零添加特浓黑豆水(30g)</li>
+  	 	  </ul>
+  	 </div>
+  	 <div id="main221">
+  	 	  <dl>
+  	 	   	<dt><img src="images/xingqing/right/main22s.jpg" /></dt>
+  	 	   	<dd>
+	  	 	   	 	<span id="s1">
+	  	 	   			<img src="images/xingqing/right/mainkey.png" />
+	  	 	   		</span>
+  	 	   		  <a  class='s1' href="javascript">分享</a>
+  	 	   	</dd>
+  	 	   	<dd>
+		  	 	   	<span id="s2"><img src="images/xingqing/right/mainkey.png" /></span> 
+  	 	   		  <a class='s2' href="javascript">收藏</a>
+  	 	   		  <span id="s3"> <img src="images/xingqing/right/mainkey.png" /></span>	
+  	 	   		  <span id="s4"><a href="javascript">消费者告知书</a></span>
+  	 	   		  <span id="s5"><img src="images/xingqing/right/main2b_03.jpg" /></span>
+  	 	   		  <span id="s6"><img src="images/xingqing/right/main2t_03.jpg" /></span> 
+  	 	   	</dd>
+  	 	  </dl>
+  	 </div>
+  	 <div id="main222">
+  	 	   <img src="images/xingqing/right/main22_03.jpg" />
+  	     <dl>
+  	      	<dt>
+	  	     		 <span class="s1">购买数量</span>
+	  	     		 <span class="s2">1</span>
+	  	     		 <span class="s3"><img src="images/xingqing/right/main2t_03.jpg" /></span>
+	  	     		 <span class="s4"><img src="images/xingqing/right/main2b_03.jpg" /></span>
+	  	     		 <span class="s5">限购2件</span>
+  	     		</dt>
+  	     		<dd>
+  	     			 <ul class="list1">
+	  	     			 <li class="l1">立即购买</li>
+	  	     			 <li class="l2">添加到购物车</li>
+  	     		   </ul>
+  	     		</dd>
+  	     		<dd>
+  	     			<ul class="list2">
+	  	     			 <li>
+	  	     			  	<span><img src="images/xingqing/right/main222_03.jpg" /></span>
+	  	     			  	<div>正品保障</div>
+	  	     			 </li>
+	  	     			 <li>
+	  	     			  	<span><img src="images/xingqing/right/main222_05.jpg" /></span>
+	  	     				  <div>24小时发货</div>
+	  	     		   </li>
+	  	     			 <li>
+		  	     				<span><img src="images/xingqing/right/main222_07.jpg" /></span>
+		  	     				<div>满25元快递包邮</div>
+	  	     			 </li>
+  	     	  	</ul>
+  	     	 </dd>
+  	    </dl>
+  	 </div>
+  	 <div id="main223">
+  	 	    <span>大家都在买</span>
+  	 	    <span id="boxg">
+  	 	    	  <ul class="box"></ul>
+  	 	    </span>
+  	 	    <div id="bottom">
+  	 	    	<img src="images/xingqing/right/main86_03.jpg" />
+  	 	    	<img src="images/xingqing/right/main86_05.jpg" />
+  	 	    </div>
+  	 </div>
+  	 <div id="gz">
+  	 	尊敬的客户：
+										您好！
+										在您选购境外商品前，麻烦您仔细阅读此文，同意本文所告知内容后再进行下单购买：
+										1.您在本（公司）网站上购买的境外商品为产地直销商品，仅限个人自用不得进行再销售，商品本身可能无中文标签，您可以查看网站的翻译或者在线联系我们的客服。
+										2.您购买的境外商品适用的品质、健康、标识等项目使用标准符合原产国使用标准，但是可能与我国标准有所不同，所以在使用过程中由此可能产生的危害或损失以及其他风险，将由您个人承担。
+										3.您在本（公司）网站上购买保税区发货的境外商品时，自动视为由达令极速免税店代您向海关进行申报和代缴税款。
+										谢谢！
+
+																																																															北京普缇客科技有限公司
+  	 </div>
+  </div> 
+  <div id="main3">
+  	 <ul id="u3">
+  	 	<li><a href="javascript:;">商品信息</a></li>
+  	 	<li><a href="javascript:;">用户评论(<span>1条</span>)</a></li>
+  	 	<li><a href="javascript:;">极速免税店介绍</a></li>
+  	 	<li><a href="javascript:;">售后服务</a></li>
+  	 	<li></li>
+  	 	<li></li>
+  	 	<li></li>
+  	 	<li></li>
+  	 	<li></li>
+  	 	<li></li>
+  	 </ul>
+  	 <dl class="d1">
+  	 	<dt>商品参数</dt>
+  	 	<dd>品牌:[台湾Simply]</dd>
+  	 	<dd>材料:黑豆/黑木耳/黑芝麻/黑桑葚/黑米/麦芽糊精/乳糖</dd>
+  	 	<dd>规格:30g</dd>
+  	 	<dd>保质期限:三年</dd>
+  	 	<dd>贮存方式:置于阴凉干燥处，避免阳光直射，秋冬季节常温保存，春秋季食品容易变质，打开后请尽快食用</dd>
+  	 	<dd>货号:D1SB0J248JC61</dd>
+  	 </dl> 
+  	 <dl class="d2">
+  	  	<dt>产品展示</dt>
+  	  	<dd>
+  	  		 <p>李时珍在《本草纲目》里说过：久食黑豆，好颜色。李时珍蜀黍说的话，当然是真谛。黑豆丰富的花青素、异黄酮以及天然的维生素E，让姑娘们喝出好气色，白里透红、晶莹剔透，不用化妆也可以美美哒。黑五类配方，全方位驻颜养身，除了黑豆，还有新鲜的黑木耳和黑桑葚，精选的黑米和黑芝麻。让你美容养颜，青春永驻的小秘密。</p> 		
+  	  	</dd>
+  	  	<dd>
+  	  		 <div title="让姑娘们喝出好气色"><img src="images/xingqing/main3/images/main3_03.jpg" /></div>
+  	  	 	 <div title="不用化妆也可以美美哒"><img src="images/xingqing/main3/images/main3_05.jpg" /></div>
+  	  		 <div title="青春永驻的小秘密"><img src="images/xingqing/main3/images/main3_07.jpg" /></div>
+  	  	</dd>
+  	 </dl>
+  	 <dl class="d3">
+  	  	<dt>用户评论</dt>
+  	  	<dd>
+  	  		 <p>黑豆被誉为豆类之王，古籍记载久服好颜色，能够滋补身体，提升代谢；黑米又称长寿米；黑木耳是近年当红的营养圣品；是体内环保的特好帮手；黑桑葚保健果品，可帮助消化；黑芝麻补充膳食纤维，更是不在话下。
+黑五类配方给你满满的营养跟美丽。采用来自世界各地天然有机的原料，坚持不添加人工膜衣，安心看的到哦。</p> 		
+  	  	</dd>
+  	  	<dd>
+	  	  	 <div title="黑豆被誉为豆类之王"><img src="images/xingqing/main3/images/main32_1.jpg" /></div>
+	  	  	 <div title="能够滋补身体，提升代谢"><img src="images/xingqing/main3/images/main32_2.jpg" /></div>
+	  	  	 <div title="采用来自世界各地天然有机的原料"><img src="images/xingqing/main3/images/main32_3.jpg" /></div>
+	  	  	 <div title="坚持不添加人工膜衣"><img src="images/xingqing/main3/images/main32_4.jpg" /></div>
+  	  	</dd>
+  	 </dl>
+  	 	  <dl class="d4">
+  	  	<dt>特别之处</dt>
+  	  	<dd>
+  	  		<ul>
+  	  			<li id="first">
+  	  				<p>好评率:<span id="">92%</span></p>
+  	  				<p>评分</p>
+  	  			</li>
+  	  			<li><input type="radio" name="pl" checked="checked"/>全部评价:124条</li>
+  	  			<li><input type="radio" name="pl"/>好评:114条</li>
+  	  			<li><input type="radio" name="pl"/>中评:7条</li>
+  	  			<li><input type="radio" name="pl"/>差评:3条</li>
+  	  		</ul>		
+  	  	</dd>
+  	  	<dd>
+  	  		 <ul class="list2">
+  	  		 	<li>
+  	  		 		<div class="d41">
+  	  		 			<img src="images/xingqing/main3/images/maind41_03.jpg" />
+  	  		 		  <p>达令_8449529118</p>
+  	  		 		</div>
+  	  		 	</li>
+  	  		 	<li>
+  	  		 		 <div>评论时间:2015-09-11 15:09:17</div>
+  	  		 		 <p>一般般，好少</p>
+  	  		 	</li>
+  	  		 	<li class="d44">
+  	  		 		评分:<img src="images/xingqing/main3/images/maind44_05.jpg" />
+  	  		 	</li>
+  	  		 </ul>
+  	  	</dd>
+  	 </dl>
+  </div>
+  <div id="main4">
+     <dl>
+     	<dt>极速免税店介绍</dt>
+     	<dd><img src="images/xingqing/main3/images/main41_03.jpg" /></dd>
+     	<dd class="last">
+     		<img src="images/xingqing/main3/images/main4b_03.jpg/" >
+     	</dd>
+     </dl>
+  </div> 
+  <div id="main5">
+  	<dl>
+  		<dt>售后服务</dt>
+  		<dd>客服电话： 400-080-1888，客服时间：周一至周日 09:00-18:00 </dd>
+  		<dd> 配送服务： 限大陆地区；申通或中通随机发货！订单满55元包邮；首单免运费！ </dd>
+  		<dd>发货时间： 周一到周日全天发货，17点前付款当日发货  </dd>
+  		<dd>相关服务： 该商品非质量问题不退不换 </dd>
+  		<dd>微信服务： 微信号：ymallll，及时服务时间：周一至周日 09:00-18:00 </dd>
+  	</dl>
+  </div>
+<div id="main6">
+	   	 <ul>
+	   	 	<li id="first"><a href="javascript:;">为什么选择达令</a><span>&nbsp;></span></li>
+	   	 	<li><img src="images/main9/main9_03.jpg" /><a href="javascript:;">100多个品牌授权</a></li>
+	   	 	<li><img src="images/main9/main9_05.jpg" /><a href="javascript:;">24小时内发货</a></li>
+	   	 	<li><img src="images/main9/main9_07.jpg" /><a href="javascript:;">保税区正品</a></li>
+   	 	  </ul>
+     </div>
+     <div id="main7">
+   	 	 <ul>
+   	 	 	<li>
+   	 	 		<dl>
+   	 	 			<dt>投资人说达令</dt>
+   	 	 			<dd>"hi,达令,我是鹿晗,达令投资人,投资比影响力更重要的是责任。"</dd>
+   	 	 		</dl>
+   	 	 	</li>
+   	 	 	<li>
+   	 	 		<dl>
+   	 	 			<dt>投资人说达令</dt>
+   	 	 			<dd>"达令一手全球好货--带您购全球,教您神马值得买。连续两年荣获App store编辑推荐最佳购物类应用！"</dd>
+   	 	 		</dl>
+   	 	 	</li>
+   	 	 </ul>
+   </div>
+       <div id="foot">
+   	  <ul>
+   	  	<li><a href="javascript:;">首页</a></li>
+   	  	<li><a href="javascript:;">网站地图</a></li>
+   	  	<li><a href="javascript:;">消费者告知书</a></li>
+   	  	<li><a href="javascript:;">关于我们</a></li>
+   	  	<li id="last"><a href="javascript:;">联系我们</a></li>
+   	  </ul>
+   	  <p>北京普缇客科技有限公司</p>
+   	  <div>Copyright 2007-2014 北京普缇客科技有限公司 京ICP备12003911号-3 京公网安备11010802011455号 站长统计 百度统计</div>
+   </div>
+  <div id="left">
+  	
+  </div> 
+  </body>
+</html>

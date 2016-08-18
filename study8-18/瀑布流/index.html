@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+ul{
+	width:1200px;
+	margin:0 auto;
+	position:relative;
+}
+li {
+	width:180px;
+	padding:10px;
+	position:absolute;
+	left:0;
+	top:0;
+	opacity:0;
+}
+li img{
+	width:180px;
+	height:auto;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+$(function(){
+	var water = new Water(200);
+	loadImg()
+//	$(window).resize(function(){
+//		water.init();
+//		clearTimeout($("ul")[0].timer);
+//		$("ul")[0].timer = setTimeout(function(){
+//			$("li").each(function(index) {
+//				water.calc(index,$(this).outerHeight()).move(this);
+//			});
+//		},50);
+//	});
+
+	function loadImg(){
+		$.ajax({
+			url:"data/img.txt",
+			cache:false,
+			success:function(str){
+				var data = eval(str);
+				for(var i=0; i<data.length; i++){
+					water.add(data[i]);
+				}
+				setTimeout(function(){
+					$("li").each(function(index, element) {
+						water.calc(index,$(this).outerHeight()).move(this);
+					});
+				},100);
+			}
+		});
+	}
+});
+//假设6列
+//列高最初为空，元素定位完第一行，列高数组将拥有6的数值
+
+
+//添加功能
+	//创建li元素，需要传递url（图片地址）
+
+//计算元素应该出现的位置（left/top），为运动打基础
+	//定义this.left/this.top变量
+	//分两种情况：1、当前元素下标小于列数 2、当前元素下标大于等于列数
+		//1、所有top值都为0， left值为当前元素的下标乘以列的宽度，添加列高
+		//2、top为列高数组的最小值， left值为列高数组最小值小标乘以列的宽度，列高的最小值加当前元素高度
+
+//定位
+	//利用jq的animate方法定位元素
+
+function Water(width){
+	this.wLi = width;
+	this.init();
+}
+Water.prototype={
+	init:function(){//重置：重新计算列数，ul宽度，重置数组
+		this.nCol = Math.floor(window.innerWidth/this.wLi);//计算列数
+		this.wUl = this.wLi*this.nCol;//计算ul宽度
+		this.aHeight = [];//创建列高度数组
+		$("ul").css("width",this.wUl);//定义ul宽度
+	},
+	add:function(url){//添加：添加瀑布流元素
+		var li = $("<li><img src='images/"+url+"'></li>");//创建li元素
+		$("ul").append(li);//添加li
+	},
+	calc:function(index,height){//计算：计算当前定位元素left/top值   参数：当前定位元素下标，当前定位元素高度
+		this.left = 0;
+		this.top = 0;
+		if(index < this.nCol){
+			this.left = this.wLi * index;//根据列下标乘以列宽度，计算当前left值
+			this.aHeight.push(height);//将当前li高度添加到列高数组中
+		}else{
+			//计算出高度最小的一列
+			var minIndex = 0;
+			this.top = this.aHeight[0];//假定top值为列高数组中的第一个值
+			for(var i=1; i<this.aHeight.length; i++){//for循环计算最小列高
+				if(this.top > this.aHeight[i]){
+					this.top = this.aHeight[i];
+					minIndex = i;
+				}
+			}
+			//添加元素的那一列，高度改变
+			this.aHeight[minIndex] += height;//添加元素的列高度会变高，所以列高数组中响应数值加当前增加元素高度
+			//计算left值
+			this.left = this.wLi*minIndex;//根据最小列高下标，计算当前定位元素left值
+		}
+		return this;
+	},
+	move:function($this){//运动：将元素通过运动定位
+		$($this).css({"left":this.left,"top":this.top,"opacity":100});
+//		alert();
+	}
+};
+</script>
+
+</head>
+
+<body>
+<ul>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

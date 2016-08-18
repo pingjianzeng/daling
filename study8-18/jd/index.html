@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>无标题文档</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/jd.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+/*
+
+	<div class="cat_title">
+		<div class="cat_menu">
+			<a href="#">热门</a><a href="#">少儿</a><a href="#">教育科技</a><a href="#">文学小说</a><a href="#">人文社科</a><a href="#">经管励志</a><a href="#">生活艺术</a><a href="#">音响产品</a><a href="#">电子书</a>
+		</div>
+		<div class="cat_title_name">图书音像</div>
+	</div>
+	<div class="cat_list">
+		<div class="cat_left"><img src="images/cat_left.jpg"></div>
+		<div class="cat_right">
+			<ul class="active">
+				<li>
+					<div class="img"><img src="images/sr/img_10.jpg"></div><div class="desc">费雪宝宝手指书</div><div class="price">￥41.50</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+*/
+$(function(){
+	$.ajax({
+		url:"data/jd.txt",
+		cache:false,
+		type:"get",
+		beforeSend: function(){
+			$(".cat_box").append("<div class='load_img'/>")
+		},
+		success: function(str){
+			//数据获取成功
+			var $data = eval(str);
+//			$(".cat_box").html('<div class="cat_title"><div class="cat_menu"></div><div class="cat_title_name">图书音像</div></div><div class="cat_list"><div class="cat_left"><img src="images/cat_left.jpg"></div><div class="cat_right"></div></div>');
+			for(var i=0; i<$data.length; i++){
+				var $json = $data[i];
+				$(".cat_menu").append('<a href="javascript:;">'+$json["catname"]+'</a>');
+				$(".cat_right").append("<ul/>");
+				var $arr = $json["data"];
+				for(var j=0; j<$arr.length; j++){
+					$json01 = $arr[j];
+					$(".cat_right ul").eq(i).append('<li><div class="img"><img src="'+$json01["imgUrl"]+'"></div><div class="desc">'+$json01["desc"]+'</div><div class="price">￥'+$json01['price']+'</div></li>');
+				}
+			}
+			$(".cat_menu a:first").addClass("active");
+			$(".cat_right ul:first").addClass("active");
+			$(".cat_menu a").mouseover(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				$(".cat_right ul").eq($(this).index()).addClass("active").siblings().removeClass("active");
+			});
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="cat_box">
+</div>
+<script>
+</script>
+</body>
+</html>

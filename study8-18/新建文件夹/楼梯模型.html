@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>当前网页标题</title>
+  <style type="text/css">
+    *{margin:0;
+    padding:0;
+    }
+  #box{padding-bottom: 300px;}  
+ .box1{width:800px;
+             height: 400px;
+             background: greenyellow;
+             margin-left:300px;
+             margin-bottom: 30px;  
+             font-size: 100px;
+             color:#000;
+             text-align: center;
+             line-height: 400px;
+             position: relative;}
+  #scro{width:30px;
+       height: 200px;
+       display: none;
+       position: fixed;
+      top:600px;
+       } 
+ #scro div{width:30px;
+         height:30px;
+         margin-bottom: 1px;
+         text-align: center;
+         background: #ccc;
+         line-height: 30px;
+         cursor: pointer;
+         }
+ #scro .active{background: orange;}
+  #scro div:hover{background: orange;}
+  </style>
+  <script type="text/javascript" src="js/jq.js">
+  	
+  </script>
+  <script type="text/javascript">
+
+  $(function(){
+  	
+  	$("#scro div").click(function(){
+  		
+  		
+  		
+		$(this).addClass("active").siblings().removeClass("active")
+		var $index=$(this).index();
+		
+ // 		$(this).css({"background":orange}).siblings().removeClass("active")
+  	var $top=$(".box1").eq($index).offset().top
+//	    console.log($top);
+  	    $("body,html").animate({scrollTop:$top},500)
+  	})
+  	$(window).scroll(function(){
+  		var $offset=-$("body,html").offset().top; 
+		if($offset>600){
+			$("#scro").fadeIn(500)
+		}else{
+			$("#scro").fadeOut(500)
+		}
+  		
+  		$(".box1").each(function(index){
+  			 			
+  			var $top=$(".box1").eq(index).offset().top
+  			if($offset>$top-200)
+  	    $("#scro div").eq(index).addClass("active").siblings().removeClass("active")
+  		})
+  	})
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+ 	
+  })
+  </script>
+  
+  
+  
+  </head>
+
+  <body style="height:5000px">
+  <div id=box">
+  	 <div class="box1">1</div>
+  	 <div class="box1">2</div>
+  	 <div class="box1">3</div>
+  	 <div class="box1">4</div>
+  	 <div class="box1">5</div>
+  	 <div class="box1">6</div>
+  	 <div class="box1">7</div>	  
+  </div>
+  <div id="scro">
+     <div class="active">1</div>
+  	 <div>2</div>
+  	 <div>3</div>
+  	 <div>4</div>
+  	 <div>5</div>
+  	 <div>6</div>
+  	 <div>7</div>	
+  </div>
+  </body>
+</html>

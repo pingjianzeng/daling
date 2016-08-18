@@ -1,0 +1,593 @@
+
+
+  
+    
+    当前网页标题
+
+  
+ 
+  
+  	
+  
+  
+ 
+   	$(function(){	
+   		
+   		 $("#top #last").mouseover(function(){
+     	  $("#top .loading").show();
+     })
+     $("#top .loading").mouseover(function(){
+     	$(this).show();
+     })
+     
+     $("#top #last").mouseout(function(){
+     	 $("#top .loading").hide()
+     })
+     $("#top .loading").mouseout(function(){
+     	$(this).hide();
+     })
+    $("#main3").find("li").mouseover(function(){
+    	$(this).css({"border":"1px solid #ccc"})
+    	$("#main3").find(".kk").eq($(this).index()).show().siblings()hide
+    })
+     
+     
+     
+     
+     
+     
+     
+     
+	$.ajax({
+   			type:"get",
+   			url:"json.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   	success:function(str){
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonStr.catname[0].catname+"")
+   					var $div=$("")
+   					$(".u0").append($li)
+   					$("#main11right").append($div)
+   		        var $ul1=$("")
+   		        console.log($ul1);
+		        var $li1=""+jsonStr.catname[0].catlist+""
+		        var str=jsonStr["sec"]
+		        console.log(str);
+		      	      
+   				   for(var j=0;j")
+   				    var dt=jsonStr2["catname"];
+   				    var $dt=$(""+dt+"")
+   				     $($dl).append($dt) 
+   				     for(var z=0;z"+dd+"")
+   				     
+   				     	console.log($dd);
+   				     	
+   				     		$($div).append($dl)
+   				
+   				     }
+   				     $($dl).append($dd)
+   				   }
+		   		
+				    $($ul1).append($li1) 
+		   	   	$($li).append($ul1)
+    				}           
+				    $("#main1left").mouseover(function(){
+				    	$("#main11right").show()  
+				   	})
+				   	$("#main1left").mouseout(function(){
+				    	$("#main11right").hide()  
+				   	})		
+				$("#main1left li").mouseover(function(){				
+						$("#main11right .box").eq($(this).index()).show().siblings().hide()										
+				})				
+       $("#main11right .box").mouseover(function(){		    
+						$("#main11right").show()											
+				})	
+   	   $("#main11right .box").mouseout(function(){		    
+						$("#main11right").hide()											
+				})	 
+   		}  		
+   	}) 	
+   	  	
+   		$.ajax({
+   			type:"get",
+   			url:"json2.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonStr.catname+"")
+   					var $div=$("")
+   					$(".u00").append($li)
+   					$("#main5 #bottom").append($div)
+   					var $u001=$("")
+   					$($div).append($u001)
+   					var $data=jsonStr["data"]
+   					for(var j=0;j"+jsonarr["desc"]+""+jsonarr["price"]+""+jsonarr["oldprice"]+""+jsonarr["ly"]+"")
+   				  		$($u001).append($l00)
+   					}
+   			}	
+   			$("#main5 #bottom .box:first").show().siblings().hide()
+   			$("#main5 #top li:first").addClass("active2");  				
+    		$("#main5 #top").find("li").click(function(){
+    			$(this).addClass("active2").siblings().removeClass("active2");
+    			$(this).css({"color":"#fff"}).siblings().css({"color":"#666"})
+           $("#main5 #bottom").find(".box").eq($(this).index()).show().siblings().hide()
+    		}) 	
+   		}  		
+   	}) 	
+
+
+   		$.ajax({
+   			type:"get",
+   			url:"json4.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonStr.catname+"")
+   					var $this=i;
+   					var $li4=$("")
+   					$("#main6 #main63 .u0000").append($li4)  				
+   					   console.log($(".L0000"));
+   					$(".u000").append($li) 					  					
+   					var jsonarr=jsonStr["data"]
+   				  for(var j=0;jTOP"+(j+1)+""+jsonarr2["desc"]+""+jsonarr2["price"]+""+jsonarr2["oldprice"]+""+jsonarr2["total"]+""+jsonarr2["ly"]+"")
+   				  $(".u5").eq($(this).index()).append($l6)
+   				}
+        }
+
+   			$("#main63 .L0000").each(function(){
+	   				$(this).find(".l6:first").css({"height":"140px"}).siblings().css({"height":"50px"})
+	   				$(this).find(".l6:first").find("img").css({"height":"140px","width":"180px"})
+   			}) 			
+   			$("#main63 .L0000").each(function(){   			
+   					$("#main63 .L0000 .l6").mouseover(function(){
+   						$(this).css({"height":"140px"}).siblings().css({"height":"50px"}).find("img").css({"height":"40%","width":"40%"})
+   							$(this).find("img").css({"height":"140px","width":"180px"})
+   				})
+   		  			$("#main63 .L0000 .l6").mouseout(function(){
+	 	      		 $("#main63 .L0000").each(function(){
+   									$(this).find(".l6:first").css({"height":"140px"}).siblings().css({"height":"50px"}).find("img").css({"height":"40%","width":"40%"})
+   									$(this).find(".l6:first").find("img").css({"height":"140px","width":"180px"})
+			})
+	   		})	
+       })
+   		}  		
+   	}) 		
+	 
+
+
+
+
+   		$.ajax({
+   			type:"get",
+   			url:"json5.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonarr["desc"]+""+jsonarr["price"]+""+jsonarr["oldprice"]+""+jsonarr["ly"]+"")
+             $(".u7").append($l7)
+   		}  		
+   	}
+  }) 
+   	
+   	$.ajax({
+   			type:"get",
+   			url:"json6.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonarr["ss"]+""+jsonarr["desc"]+""+jsonarr["con"]+""+jsonarr["price"]+""+jsonarr["oldprice"]+""+jsonarr["ly"]+""+jsonarr["sum"]+"")
+             $(".u8").append($l8)
+           }
+             $("#main8 #main82 #btn").click(function(){
+             	  $(this).hide()
+             	   $("#main8 #main82 .u8").css({"height":"1740px"})
+             	   $("#main9").css({"margin-top":"600px"})
+             })
+   	}
+  }) 
+  
+  	$.ajax({
+   			type:"get",
+   			url:"json7.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+
+   				var $arr=eval(str)
+   				for(var i=0;i"+jsonarr["ss"]+""+jsonarr["desc"]+""+jsonarr["con"]+""+jsonarr["oldprice"]+""+jsonarr["ly"]+"")
+             $(".u82").append($l82)
+           }
+   				
+   				var $sum=0;
+   			$("#main8 #main82 #btn2 img:first").click(function(){ 
+   
+   				if($sum==0){
+   					$("#main8 #main82 .u82").css({"margin-top":"-3100px"})
+					$sum=3;
+   				}else{
+   					$sum--;
+   					 $("#main8 #main82 .u82").css({"margin-top":-1050*$sum+"px"})
+   				}
+   			})
+   			$("#main8 #main82 #btn2 img:last").click(function(){         	
+   				$sum++;
+   				$("#main8 #main82 .u82").css({"margin-top":-1050*($sum%4)+"px"})
+   			   if($sum==3){
+   			   	$sum=-1
+   			   }	
+   			})
+      }     
+
+  }) 
+                     
+   	$(function(){
+	var slide = new Slide();
+	
+	slide.box.find("li").fadeOut().eq(0).fadeIn();
+	slide.timer = setInterval(function(){
+		slide.fnNext().fnChange();
+	},2000);
+	$("#prev").click(function(){
+		slide.fnPrev().fnChange();
+	});
+	$("#next").click(function(){
+		slide.fnNext().fnChange();
+	});
+	$(".box").mouseover(function(){
+		clearInterval(slide.timer);
+	})
+	$(".box").mouseout(function(){
+		slide.timer = setInterval(function(){
+			slide.fnNext().fnChange();
+		},2000);
+	});
+	$(".dot span").mouseover(function(){
+		slide.numChange(this);
+	});
+});
+   	
+   	
+function Slide(){
+	this.box = $("#main1right");
+	this.$num = 0;
+}
+Slide.prototype={
+	 fnNext:function (){
+		this.$num++;
+		if(this.$num >= this.box.find("li").length){
+			this.$num = 0;
+		}
+		return this;
+	},
+	fnPrev:function (){
+		this.$num--;
+		if(this.$num 
+
+  
+
+  
+
+  	
+  		 
+  		 	 
+  		 	 	 
+  		 	 	 购物车
+  		 	 	 0	  
+  		 	 
+  		 	 
+  		 	 	
+  	 我的优惠券 -->
+  		 	 		
+  		 	 	 
+  		 	我的收藏-->
+  		 	 		
+  		 	 
+  		 	 
+  		 		 
+  		 		  
+  		 		 
+  		   
+  		 
+  	
+
+
+
+   
+   
+   	 消费者告知书
+   	 
+	   	 	登录
+	   	 	注册
+	   	 	&nbsp;400-080-1888
+	   	 	下载达令app
+   	 
+   	 
+   
+   
+   	 
+   	 	 
+   	 
+   	 
+   	 	 
+   	 
+   	 
+   	 	 
+   	 	 
+   	 	 
+   	 	 	眼霜
+   	 	 	文具
+   	 	 	杯子
+   	 	 	项链
+   	 	 	钱包
+   	 	 	面膜
+   	 	 	香水
+   	 	 	巧克力
+   	 	 	情趣   	 	 	
+   	 	 
+   	   	 
+   
+   
+   	 
+   	 	  全部分类^
+   	 	  
+   	 	  	首页
+   	 	  	极致美护
+   	 	  	全球零食
+   	 	  	创意生活
+   	 	  	个性配饰
+   	 	  	包袋手袋   	 	  	
+   	 	  
+   	 
+   	  
+	   	 	 
+	   	 		 
+	   	 		 	
+   	 
+   	 
+
+   	 
+   
+   	 	   
+   	 	   	
+   	 	   	
+   	 	   	
+   	 	   
+   	 	   123
+      
+   	  
+    
+   
+    	
+    		 
+    	
+      
+      	
+      		
+      	  今日上新早八点上新
+      	
+      	
+      		
+      		  
+      			
+      		
+      	
+       	
+     
+    
+    	 
+      	
+      		
+      	  今日必看每天逛一圈
+      	  
+      	
+      	
+      		
+      		  
+      		  	  加入购物车
+      		  	  
+      		  	  	 $198.00$23898人收藏      		  	  	 
+      		  	  	 8.3折/[日本和泉屋]长崎Castilla蜂蜜蛋糕(300g)
+      		  	  
+      		  
+      			
+      				加入购物车
+      				
+      		  	  	 $19.80$24.8067人收藏      		  	  	 
+      		  	  	 8折/[英国泰瑞]酥脆香口薯片(香酥甜辣味/40g*2)
+      		  	  
+      			
+      			
+      				加入购物车
+      				
+      		  	  	 $59.80$75.0063人收藏      		  	  	 
+      		  	  	 8折/[美国甜蜜家庭]酥脆鲜香格兰诺拉麦片(枫糖山核桃/582g)
+      		  	  
+      			
+      			
+      				加入购物车
+      				
+      		  	  	 $139.00$199.0064人收藏      		  	  	 
+      		  	  	 7折/[IVR]iPhone6内置电池1810mAh送全套拆机工具及螺丝BHAP06B(黑色)
+      		  	
+      			     	
+      		
+      	    
+      		
+      			
+      	      加入购物车  
+      	              	        	
+      	           
+      				  
+      		  	  	 $79.00$81.0047人收藏      		  	  	 
+      		  	  	 9.8折/[日本gargle]经典勺子耳夹
+      		  	  
+      			
+      			
+      				 加入购物车
+      				 
+      	         
+      				
+      				
+      		  	  	 $119.00$158.0054人收藏      		  	  	 
+      		  	  	 7.5折/[美国迪士尼]炫酷米奇黑醇摇滚杯(300ml)
+      		  	  
+      			
+      		      	
+       
+    
+    
+    	 
+    	 	
+      		
+      	  神马值得买帮你挑选全球好货
+      	  
+      	  	 全球好货
+      	  
+      	
+    	 	
+    	 		
+    	 		
+    	 			
+    	 			
+    	 			
+    	 			
+    	 			
+    	 		
+    	 		>   	 		   	 		
+    	 	
+    	 
+    
+       	 
+    	 		
+      	  	 大家都说好
+      	   	 
+      	  
+      	  	 
+      	    
+      	  
+      	        	  	
+      	  
+    
+    
+		    	
+		      	  	 买了又买
+		       
+		      
+		      		      			      		
+		      			      	
+		      
+		      
+		      	 
+		      	 
+		      
+    
+    
+    	 	 
+		      	  	 新品黑马
+		      
+		     	     	
+		     
+    
+    
+    		
+    		   
+    	  
+	      
+	      	
+	      		
+	      	  今日闪购每天都有惊喜最低5折
+	      	
+	    	
+    	  
+    	  	 
+    	  	 	
+    	  	 
+    	  	
+    	  	     	  	 	
+    	  	     	  	 	
+    	  
+    		 
+    	  	 
+    	  	 	  点击查看更多
+    	  	 
+    	  	 
+    	  	 	 闪购预告
+    	  	 	 (明晚20:20火爆开售)
+    	  	 
+    	  	 
+    	  	 	  
+    	  	 	  
+    	  	 
+    	  
+     
+     
+	   	 
+	   	 	为什么选择达令&nbsp;>
+	   	 	100多个品牌授权
+	   	 	24小时内发货
+	   	 	保税区正品
+   	 	  
+     
+     
+   	 	 
+   	 	 	
+   	 	 		
+   	 	 			投资人说达令
+   	 	 			"hi,达令,我是鹿晗,达令投资人,投资比影响力更重要的是责任。"
+   	 	 		
+   	 	 	
+   	 	 	
+   	 	 		
+   	 	 			投资人说达令
+   	 	 			"达令一手全球好货--带您购全球,教您神马值得买。连续两年荣获App store编辑推荐最佳购物类应用！"
+   	 	 		
+   	 	 	
+   	 	 
+   
+       
+   	  
+   	  	首页
+   	  	网站地图
+   	  	消费者告知书
+   	  	关于我们
+   	  	联系我们
+   	  
+   	  北京普缇客科技有限公司
+   	  Copyright 2007-2014 北京普缇客科技有限公司 京ICP备12003911号-3 京公网安备11010802011455号 站长统计 百度统计
+   
+  
+  	
+    
+    
+    
+    
+    
+   
+  

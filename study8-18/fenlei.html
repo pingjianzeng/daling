@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>当前网页标题</title>
+<link rel="shortcut icon" href="http://img.cdn.daling.com/st/web/160809171739//styles/images/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="css/fenlei.css">
+ 
+  <script type="text/javascript" src="js/jq.js">
+  	
+  </script>
+  <script type="text/javascript">
+    $(function(){
+    	
+     $("#top #last").mouseover(function(){
+     	  $("#top .loading").show();
+     })
+     $("#top .loading").mouseover(function(){
+     	$(this).show();
+     })
+     
+     $("#top #last").mouseout(function(){
+     	 $("#top .loading").hide()
+     })
+     $("#top .loading").mouseout(function(){
+     	$(this).hide();
+     })
+     
+        var $m=0;
+      $(".r11").click(function(){
+      	     $m++
+             if($m%2==1){
+      	        $("#right").animate({"margin-right":"0"},500)
+             }else{
+             	  $("#right").animate({"margin-right":"-280"},500)
+         }
+    })
+      $("#main6 li:first").css({"background":"#f3eeee"}).siblings().css({"background":"#fff"})
+      $("#main6 li").mouseover(function(){
+      	 $(this).css({"background":"#f3eeee"}).siblings().css({"background":"#fff"})
+      })
+       $("#main6 li").mouseout(function(){
+      	 $("#main6 li:first").css({"background":"#f3eeee"}).siblings().css({"background":"#fff"})
+      })
+        
+          var total
+      $("#main6").find("li").click(function() {  
+    	var  $n=$(this).index()
+    	     total=$n
+  	       console.log(total);
+  	       if(total<3){
+      $("#main5 .u1").css({"top":-1708*total+"px"})	
+  	       }
+     })
+    	$("#main6 .prev").click(function(){
+//  		alert(1111)
+    		  if(total<=0){
+    		  	total=0
+    		  	alert("已经到首页了！")
+    		  }else{
+    		  	total--
+    		  	console.log(total);
+    		  	 $("#main5 .u1").css({"top":-1708*total+"px"})
+    		  }
+    		
+    	})
+    	
+    	$("#main6").find(".next").click(function(){
+    		  if(total>=2){
+    		  	total=2
+    		  	alert("已经到最后一页了！")
+    		  }else{
+    		  	total++
+    		  	 $("#main5 .u1").css({"top":-1708*total+"px"})
+    		  }
+    		
+    	})
+   	$.ajax({
+   			type:"get",
+   			url:"jsonfenlei.txt",
+   			async:true,
+   			cache:false,
+   			error:function(xhr){
+// 				alert(xhr.status)
+   			},
+   			success:function(str){
+   				var $arr=eval(str)
+   				for(var i=0;i<$arr[0].data.length;i++){
+   					var jsonarr=$arr[0].data[i]
+					  var $l1=$("<li class='l1'><div class='kk'><span>加入购物车</span><img src='images/gougou_02.jpg' /></div><div class='p0'><img src='"+jsonarr["imgUrl"]+"'/></div><div class='p1'>"+jsonarr["price"]+"</div><div class='p2'>"+jsonarr["oldprice"]+"</div><div class='p3'>"+jsonarr["zk"]+"</div><div class='p4'><a href='javascript:;' >"+jsonarr["desc"]+"</a></div><div class='p5'>"+jsonarr["sc"]+"</div><div class='p6'>"+jsonarr["pl"]+"</div></li>")
+             $("#main5 .u1").append($l1)
+   		} 
+   		
+   		$("#main5 li").mouseover(function(){
+   			$("#main5 li").find(".kk").eq($(this).index()).show()
+   		})
+   		$("#main5 li").mouseout(function(){
+   			$("#main5 li").find(".kk").eq($(this).index()).hide()
+   		})
+   		   
+   		 var $sum=0
+
+      $("#main5 .kk").click(function(){
+      	$sum++
+      	$(".r11 #s2").html($sum)
+      })
+   
+  
+    	}
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    })
+   		
+       function fn(obj,target,speed,fn){
+			var  a=0.003;				
+			var dis=0;			
+			obj.timer=null;
+			//相对的坐标
+			var coord={
+				x:target.left-obj.offsetLeft,
+				y:target.top-obj.offsetTop,
+			}			
+			//求b系数			
+			//var b= (y-ax2)/x;			
+			var b=(coord.y-a*coord.x*coord.x)/coord.x;		
+			var yuandian={
+				x:obj.offsetLeft,
+				y:obj.offsetTop
+			}				
+			obj.timer=setInterval(function(){				
+				dis+=speed;			
+				obj.style.left=yuandian.x+dis+"px";
+				obj.style.top=yuandian.y+a*dis*dis+b*dis+"px";			
+				if(dis>=coord.x){
+					clearInterval(obj.timer);
+					obj.style.left=target.x+"px";
+					obj.style.top=target.y+"px";
+					fn&&fn();
+				}
+		},30)
+
+  }		
+   		
+   		
+   		
+   		
+   		
+   		
+  </script>
+  
+  
+  
+  </head>
+
+  <body>
+<div id="right">
+  		 <div class="r1">
+  		 	 <div class="r11">
+  		 	 	 <img src="images/xingqing/right/right.png"/>
+  		 	 	 <span id="s1">购物车</span>
+  		 	 	 <span id="s2">0</span>	  
+  		 	 </div>
+  		 	 <ul class="u1">
+  		 	 	<li id="first">
+  		 	 		<img src="images/xingqing/right/right_01.jpg"/></li>
+  		 	 	<li id="last"> 
+  		 	 		<img src="images/xingqing/right/right_03.jpg"/></li>
+  		 	 </ul>
+  		 	 <div id="bottom">
+  		 		 <img src="images/top_04.jpg" />
+  		 		  <img src="images/xingqing/right/right11.png"/>
+  		 		 
+  		   </div>
+  		 </div>
+  	</div>
+   <div id="top">
+   	 <p><a href="javascript:;" >消费者告知书</a></p>
+   	 <ul id="list">
+	   	 	<li><a href="javascript:;" >登录</a></li>
+	   	 	<li><a href="javascript:;" >注册</a></li>
+	   	 	<li><a href="javascript:;" ><img src="images/top_03.jpg" />&nbsp;400-080-1888</a></li>
+	   	 	<li id="last"><a href="javascript:;" >下载达令app</a></li>
+   	 </ul>
+   	 <div class="loading"><img src="images/top_04.jpg" /></div>
+   </div>
+   <div id="banner">
+   	 <div class="banner1">
+   	 	 <img src="images/banner_04.jpg"  />
+   	 </div>
+   	 <div class="banner2">
+   	 	 <img src="images/banner_03.jpg"  />
+   	 </div>
+   	 <div class="banner3">
+   	 	 <input type="text" id="box"/>
+   	 	 <input type="button" id="btn" value="搜索" />
+   	 	 <ul id="banner4">
+   	 	 	<li><a href="javascript:;" >眼霜</a></li>
+   	 	 	<li><a href="javascript:;" >文具</a></li>
+   	 	 	<li><a href="javascript:;" >杯子</a></li>
+   	 	 	<li><a href="javascript:;" >项链</a></li>
+   	 	 	<li><a href="javascript:;" >钱包</a></li>
+   	 	 	<li><a href="javascript:;" >面膜</a></li>
+   	 	 	<li><a href="javascript:;" >香水</a></li>
+   	 	 	<li><a href="javascript:;" >巧克力</a></li>
+   	 	 	<li><a href="javascript:;" >情趣</a></li>   	 	 	
+   	 	 </ul>
+   	 </div>  	 
+   </div>
+<div id="main1">
+   	 <div id="main11">
+   	 	  <p>全部分类^</p>
+   	 	  <ul id="list">
+   	 	  	<li><a href="javascript:;" >首页</a></li>
+   	 	  	<li><a href="javascript:;" >极致美护</a></li>
+   	 	  	<li><a href="javascript:;" >全球零食</a></li>
+   	 	  	<li><a href="javascript:;" >创意生活</a></li>
+   	 	  	<li><a href="javascript:;" >个性配饰</a></li>
+   	 	  	<li><a href="javascript:;" >包袋手袋</a></li>   	 	  	
+   	 	  </ul>
+   	 </div>
+   </div>	
+	<div id="main2">
+		 <ul>
+		 	<li class="first"><img src="images/fenlei/main21_03.jpg" /><span>></span></li>
+		 	<li>
+		 		<select>
+		 		  <option><a href="javascript:;">全球零食</a></option>
+		 		  <option><a href="javascript:;">3C家电</a></option>
+		 		  <option><a href="javascript:;">尖货女装</a></option>
+		 		  <option><a href="javascript:;">时尚配饰</a></option>
+		 		  <option><a href="javascript:;">创意生活</a></option>
+		 		  <option><a href="javascript:;">全球零食</a></option>
+		 		  <option><a href="javascript:;">极致美护</a></option>
+		   	</select>
+		 	</li>
+		 	<li class="last"><input type="" name="" id="" value="" /><img src="images/fenlei/main2_1_03.jpg" /></li>
+		 </ul>
+	</div>
+   <div id="main3">
+   	 <ul>
+   	 	<li>
+   	 		<dl class="d1">
+   	 			<dt>达令力荐:</dt>
+   	 			<dd class="first">
+   	 				<div id=""><a href="javascript:;" />宿舍宵夜吃起来</a></div>
+   	 				<div id=""><a href="javascript:;" />困乏提神好物</a></div>
+   	 				<div id=""><a href="javascript:;" />办公室抽屉必备</a></div>
+   	 				<div id=""><a href="javascript:;" />超人气甜品</a></div>
+   	 			</dd>
+   	 			<dd class="last">
+   	 				<span>+</span>
+   	 				<span><a href="javascript:;" />多选</a></span>
+   	 			</dd>
+   	 		</dl>
+   	 	</li>
+   	 	<li>
+   	 		<dl class="d2">
+   	 			<dt>地区:</dt>
+   	 			<dd class="first">
+   	 				<div id=""><a href="javascript:;" />韩国</a></div>
+   	 				<div id=""><a href="javascript:;" />台湾</a></div>
+   	 				<div id=""><a href="javascript:;" />美国</a></div>
+   	 				<div id=""><a href="javascript:;" />欧洲</a></div>
+   	 				<div id=""><a href="javascript:;" />东南亚</a></div>
+   	 				<div id=""><a href="javascript:;" />日本</a></div>
+   	 				<div id=""><a href="javascript:;" />澳洲</a></div>
+   	 			</dd>
+   	 			<dd class="last">
+   	 				<span>+</span>
+   	 				<span><a href="javascript:;" />多选</a></span>
+   	 			</dd>
+   	 		</dl>
+   	 	</li>
+   	 	<li>
+   	 		<dl class="d3">
+   	 			<dt>品牌:</dt>
+   	 			<dd class="first">
+   	 				<div id=""><a href="javascript:;" />味倍加</a></div>
+   	 				<div id=""><a href="javascript:;" />Mixx</a></div>
+   	 				<div id=""><a href="javascript:;" />刷我的卡</a></div>
+   	 				<div id=""><a href="javascript:;" />爱唯倪</a></div>
+   	 				<div id=""><a href="javascript:;" />乐天</a></div>
+   	 				<div id=""><a href="javascript:;" />牙谷优</a></div>
+   	 				<div id=""><a href="javascript:;" />味滋铺</a></div>
+          </dd>
+          <dd class="last">
+   	 				<span>+</span>
+   	 				<span><a href="javascript:;" />多选</a></span>
+   	 			</dd >
+   	 			<dd class="last2">
+   	 				<span>+</span>
+   	 				<span><a href="javascript:;" />更多</a></span>
+   	 			</dd>
+   	 		</dl>
+   	 	</li>
+   	 	<li>
+   	 			<dl class="d4">
+   	 			<dt>价格:</dt>
+   	 			<dd class="first">
+   	 				<div id=""><a href="javascript:;" />0-50</a></div>
+   	 			  <div id=""><a href="javascript:;" />50-100</a></div>
+   	 			  <div id=""><a href="javascript:;" />100-500</a></div>
+   	 			  <div id=""><a href="javascript:;" />500以上</a></div>
+   	    	</dd>
+   	    	<dd class="last">
+   	 				<span>+</span>
+   	 				<span><a href="javascript:;" />多选</a></span>
+   	 			</dd>
+   	 		 </dl>
+   	 	</li>
+   	 </ul>
+   </div>
+   <div id="main4">
+   	  <ul class="u0">
+   	     <li>排序:</li>
+   	     <li class="first"><a href="javascript:;" />默认</a><span><img src="images/fenlei/main4_1.png" /></span></li>
+   	     <li><a href="javascript:;" />价格</a></li>
+   	     <li><a href="javascript:;" />销量</a><span><img src="images/fenlei/main4_1.png" /></span></li>
+   	     <li><a href="javascript:;" />人气</a><span><img src="images/fenlei/main4_1.png" /></span></li>
+   	     <li class="last"><a href="javascript:;" />上架时间</a><span><img src="images/fenlei/main4_1.png" /></span></li>
+   	     <li><input type="checkbox" />只看有货</li>
+   	  </ul>
+   </div>
+   <div id="main5">
+   	   <ul class="u1">
+   	   </ul>
+   </div>
+   <div id="main6">
+   	   <ul class="u2">
+   	   	<li>1</li>
+   	   	<li>2</li>
+   	   	<li>3</li>
+   	   	<li>...</li>
+   	   	 </ul>
+   	   	<div class="prev">上一页</div>
+   	   	<div class="next">下一页</div>
+   	  
+   </div>
+   <div id="main7">
+	   	 <ul>
+	   	 	<li id="first"><a href="javascript:;">为什么选择达令</a><span>&nbsp;></span></li>
+	   	 	<li><img src="images/main9/main9_03.jpg" /><a href="javascript:;">100多个品牌授权</a></li>
+	   	 	<li><img src="images/main9/main9_05.jpg" /><a href="javascript:;">24小时内发货</a></li>
+	   	 	<li><img src="images/main9/main9_07.jpg" /><a href="javascript:;">保税区正品</a></li>
+   	 	  </ul>
+     </div>
+     <div id="main8">
+   	 	 <ul>
+   	 	 	<li>
+   	 	 		<dl>
+   	 	 			<dt>投资人说达令</dt>
+   	 	 			<dd>"hi,达令,我是鹿晗,达令投资人,投资比影响力更重要的是责任。"</dd>
+   	 	 		</dl>
+   	 	 	</li>
+   	 	 	<li>
+   	 	 		<dl>
+   	 	 			<dt>投资人说达令</dt>
+   	 	 			<dd>"达令一手全球好货--带您购全球,教您神马值得买。连续两年荣获App store编辑推荐最佳购物类应用！"</dd>
+   	 	 		</dl>
+   	 	 	</li>
+   	 	 </ul>
+   </div>
+       <div id="foot">
+   	  <ul>
+   	  	<li><a href="javascript:;">首页</a></li>
+   	  	<li><a href="javascript:;">网站地图</a></li>
+   	  	<li><a href="javascript:;">消费者告知书</a></li>
+   	  	<li><a href="javascript:;">关于我们</a></li>
+   	  	<li id="last"><a href="javascript:;">联系我们</a></li>
+   	  </ul>
+   	  <p>北京普缇客科技有限公司</p>
+   	  <div>Copyright 2007-2014 北京普缇客科技有限公司 京ICP备12003911号-3 京公网安备11010802011455号 站长统计 百度统计</div>
+   </div>
+  <div id="left">
+  	
+  </div> 
+  </body>
+</html>

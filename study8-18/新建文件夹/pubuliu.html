@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>当前网页标题</title>
+  <style type="text/css">
+  
+  </style>
+  <script type="text/javascript" src="js/jq.js">
+  	
+  </script>
+  <script type="text/javascript">
+   
+    $(function(){
+    	$.ajax({
+    		url:"json1.txt";
+    		cache:false;
+    		type:"GET"
+    		async:true;
+    		beforeSend:function(xml){
+    			alert(xml.status)
+    		}
+    		success:function(str){
+    			var arr=eval(str);
+    			
+    			console.log(arr)
+    			
+//  			for(var i=0;i<arr.length;i++){
+//  				$("ul").append('<li><img src="images/'+arr[i]+'"></li>')
+//  			}
+//  			
+//  			var numArr=[0,0,0,0]
+//  			$("li").each(function(index,element){
+//  				var x=0;
+//  				var y=0;
+//  				if(index<4){
+//  				y=0;
+//  				x=300*index;
+//  				numArr[index]+=$(this).outerHeight();
+//  			}else{
+//  				var minnumArr
+//  			}
+//  				
+//  				
+//  			})
+//  			
+    			
+    			
+    			
+    		}
+    	})
+    	
+    	
+    	
+    })
+   
+
+
+  </script>
+  
+  
+  
+  </head>
+
+  <body>
+  
+  
+  
+  
+  
+  </body>
+</html>

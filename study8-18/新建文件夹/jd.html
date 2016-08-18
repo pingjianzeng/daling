@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>当前网页标题</title>
+  <style type="text/css">
+  *{margin:0;
+    padding:0;
+    list-style:none;
+    }
+  #box{width:1000px;
+       height:600px;
+    background: red;
+       position: relative;
+       margin: 0 auto;}
+  #box ul{width:200px;
+          position:absolute;
+       background: #eee;
+          height: 600px;}
+  #box ul li{width:200px;
+            height:50px;
+            line-height:50px;
+            font-size:24px;
+            text-align: center;
+            z-index: 2;
+            display:block;
+            background: green;
+           }  
+   #box #right{width:600px;
+            height:600px;
+            background: yellow;
+            font-size: 50px;
+            color:#000000;
+            text-align: center;
+            line-height: 600px;
+    
+            position: absolute;
+            left:200px;
+         } 
+         
+ #box #right div{z-index: 2;
+                 position:absolute;
+                 display: none;}
+ #box #right div h3{z-index: 3;
+                    font-size: 18px;
+                    color:#F00;
+                   margin-left: 20px;
+                    background: greenyellow;
+                    width:500px;
+                    height: 60px;
+					line-height:60px;
+                    margin-top:20px ;
+                    top:20px;
+					margin-left:0px;
+				
+					text-align:left;
+            
+                }
+#box #right div h3 p{z-index: 4;
+                    font-size: 14px;
+                    color:#000;
+                    margin-left:60px;
+                    background: greenyellow;
+                    width:500px;
+                    height: 60px;
+                    margin-top:-60px ;
+                    margin-right:10px;
+                     line-height:60px;
+                }
+  </style>
+<!--  <script type="text/javascript" src="js/jq.js">-->
+  <script type="text/javascript" src="js/jquery.min.js">	
+  </script>
+ 
+  <script type="text/javascript">
+
+   $(function(){  	
+
+   
+
+   $.ajax({
+    		url:"json.txt",
+    		cache:false,
+    		type:"GET",
+    		async:true,
+    		errror:function(){
+    			alert("未找到对应文件")
+    		},
+    		success:function(str){
+    			var arr=eval(str)
+    			console.log(arr);
+    			
+
+    	 for(var i=0;i<arr.length;i++){
+   	 	$("#box ul").append("<li>"+arr[i]["catname"]+"</li>")   
+   	 	$("#box #right").append($div) 
+   	 	console.log(arr.length);
+   	 	var  $div=$("<div></div>")
+   	 	
+	    
+	  
+//  	  console.log(arr[i].cattitle.length)
+   	     for(var j=0;j<arr[i].cattitle.length;j++){
+     	
+   	   	var $h3=$("<h3>"+arr[i].cattitle[j]["cat"]+"</h3>")
+	       $div.append($h3)
+   	         
+	 	        for(var z=0;z<arr[i].cattitle.length;z++){
+	 	        	var $p=$("<p>"+arr[i].cattitle[z]["catlist"]+"</p>")
+	 	        	$h3.append($p)
+	 	        }
+	 	  
+  
+   	 		
+    	 		
+	   	
+
+    	 }
+   	     
+   	     
+    }	 
+ 
+  
+    	
+    
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 $("ul li").mousemove(function(){
+		   	$("#box #right div").eq($(this).index()).show()
+   	})
+	$("#box #right div").mousemove(function(){
+			$(this).show()
+ 	})
+   	$("ul li").mouseout(function(){
+   			$("#box #right div").eq($(this).index()).hide()
+   	})   	
+   	$("#box #right div").mouseout(function(){
+   		$(this).hide()
+   	}) 	
+    			
+      }
+   
+   })
+   
+   
+   
+   
+   
+   
+   
+   })
+
+
+
+
+  </script>
+  
+  
+  
+  </head>
+
+  <body>
+<div id="box">
+	<ul>
+		<!--<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>
+		<li>电器</li>		
+		<li>电器</li>
+		<li>电器</li>-->
+	</ul>
+<div id="right"></div>
+
+	<!--<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+	<div>11</div>
+	<div>12</div>-->
+</div>
+  </body>
+</html>

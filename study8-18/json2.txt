@@ -1,0 +1,44 @@
+﻿[
+   {"catname":"全部商品","data":[{"imgUrl":"images/sr/main5_1.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[韩国.拒绝做干皮人]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+                             {"imgUrl":"images/sr/main5_2.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[法国.敏感觉踏实卸]Bioderma 贝德玛敏感肌肤卸妆水(500ml)(法版.亚版随机发货)","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_3.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[泰国.曲奇不再单调]皇室 蓝莓酱黄油曲奇饼干(450g)","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_4.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[日本.清新口气秘密武器]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的东东"},							 
+							 {"imgUrl":"images/sr/main5_5.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main522.png","desc":"[美国.好吃抗饿不长膘]宝氏提子枣子核桃麦片(453g)","price":"￥297.00","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_6.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[国货经典.解放双手追剧不愁]金顶双夹头懒人手机支架(粉色)","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的东东"}
+							 ]},
+   {"catname":"极致美护","data":[{"imgUrl":"images/jy/main52_1.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"C++ Primer（中文版 第5版）","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+	                         {"imgUrl":"images/jy/main52_2.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"Python核心编程（第2版）","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_3.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"HTML5+CSS3从入门到精通（附光盘）","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_4.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"Java核心技术（卷1）：基础知识（原书第9版）","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_5.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main522.png","desc":"WHAT IF那些古怪又让人忧心的问题（珍藏版）","price":"￥66.20","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},							
+							 {"imgUrl":"images/jy/main52_6.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"华夏万卷 田英章硬笔书法楷书入门：笔画偏旁+间架结构+实战（套装共3册 附米字格练字本）","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"}
+							 ]},									 
+   {"catname":"全球零食","data":[{"imgUrl":"images/sr/main5_1.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[韩国.拒绝做干皮人]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+                             {"imgUrl":"images/sr/main5_2.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[法国.敏感觉踏实卸]Bioderma 贝德玛敏感肌肤卸妆水(500ml)(法版.亚版随机发货)","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_3.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[泰国.曲奇不再单调]皇室 蓝莓酱黄油曲奇饼干(450g)","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_4.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[日本.清新口气秘密武器]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的东东"},							 
+							 {"imgUrl":"images/sr/main5_5.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main522.png","desc":"[美国.好吃抗饿不长膘]宝氏提子枣子核桃麦片(453g)","price":"￥297.00","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_6.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[国货经典.解放双手追剧不愁]金顶双夹头懒人手机支架(粉色)","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的东东"}
+							 ]},
+   {"catname":"创意生活","data":[{"imgUrl":"images/jy/main52_1.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"C++ Primer（中文版 第5版）","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+	                         {"imgUrl":"images/jy/main52_2.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"Python核心编程（第2版）","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_3.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"HTML5+CSS3从入门到精通（附光盘）","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_4.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"Java核心技术（卷1）：基础知识（原书第9版）","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_5.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main522.png","desc":"WHAT IF那些古怪又让人忧心的问题（珍藏版）","price":"￥66.20","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},							
+							 {"imgUrl":"images/jy/main52_6.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"华夏万卷 田英章硬笔书法楷书入门：笔画偏旁+间架结构+实战（套装共3册 附米字格练字本）","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"}
+							 ]},							 
+   {"catname":"个性配饰","data":[{"imgUrl":"images/sr/main5_1.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[韩国.拒绝做干皮人]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+                             {"imgUrl":"images/sr/main5_2.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main511.png","desc":"[法国.敏感觉踏实卸]Bioderma 贝德玛敏感肌肤卸妆水(500ml)(法版.亚版随机发货)","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_3.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[泰国.曲奇不再单调]皇室 蓝莓酱黄油曲奇饼干(450g)","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_4.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[日本.清新口气秘密武器]Clinie 美迪惠尔NMF针剂水库面膜(25ml/片*10片)","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的东东"},							 
+							 {"imgUrl":"images/sr/main5_5.jpg","smallimg":"images/sr/main5_61.jpg","ss":"images/sr/main522.png","desc":"[美国.好吃抗饿不长膘]宝氏提子枣子核桃麦片(453g)","price":"￥297.00","oldprice":"￥135.00","ly":"很喜欢的东东"},
+							 {"imgUrl":"images/sr/main5_6.jpg","smallimg":"images/sr/main5_61.jpg","ss":"","desc":"[国货经典.解放双手追剧不愁]金顶双夹头懒人手机支架(粉色)","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的东东"}
+							 ]},
+   {"catname":"包装手袋","data":[{"imgUrl":"images/jy/main52_1.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"C++ Primer（中文版 第5版）","price":"￥29.90","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+	                         {"imgUrl":"images/jy/main52_2.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main511.png","desc":"Python核心编程（第2版）","price":"￥22.60","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_3.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"HTML5+CSS3从入门到精通（附光盘）","price":"￥34.40","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_4.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"Java核心技术（卷1）：基础知识（原书第9版）","price":"￥33.10","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},
+							 {"imgUrl":"images/jy/main52_5.jpg","smallimg":"images/jy/main5_61.jpg","ss":"images/jy/main522.png","desc":"WHAT IF那些古怪又让人忧心的问题（珍藏版）","price":"￥66.20","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"},							
+							 {"imgUrl":"images/jy/main52_6.jpg","smallimg":"images/jy/main5_61.jpg","ss":"","desc":"华夏万卷 田英章硬笔书法楷书入门：笔画偏旁+间架结构+实战（套装共3册 附米字格练字本）","price":"￥41.50","oldprice":"￥135.00","ly":"很喜欢的面膜共有32008条评论好评率97%"}
+							 ]}							 
+]
